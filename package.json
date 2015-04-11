@@ -1,0 +1,17 @@
+{
+  "name": "snakes-on-a-plane",
+  "version": "1.0.0",
+  "description": "Testing video interactions",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp default",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Gale",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.5.3",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-jade": "^1.0.0"
+  }
+}
