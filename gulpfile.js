@@ -1,8 +1,7 @@
 var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   jade = require('gulp-jade'),
-  //babel = require('gulp-babel'),
-  fs = require('fs'),
+  source = require('vinyl-source-stream'),
   browserify = require('browserify'),
   babelify = require('babelify'),
   sass = require('gulp-sass'),
@@ -44,12 +43,11 @@ gulp.task('scripts', function () {
     .on('error', function (err) {
       console.log('Error: ' + err.message);
     })
-    .pipe(fs.createWriteStream('dest/js/app.js'))
-    .on('end', function () {
-      reload({
-        stream: true
-      });
-    });
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('dest/js'))
+    .pipe(reload({
+      stream: true
+    }));
 
 });
 
